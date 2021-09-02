@@ -1,8 +1,8 @@
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
-import Home from './Home';
-import Shop from './Shop';
-import Cart from './Cart';
+import Home from './components/Home';
+import Shop from './components/Shop';
+import Cart from './components/Cart';
 
 function App() {
 	return (
