@@ -1,0 +1,191 @@
+:root {
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+		sans-serif;
+	font-size: 16px;
+}
+
+body {
+	height: 100vh;
+	width: 100%;
+	padding: 1rem;
+	box-sizing: border-box;
+	background-color: rgb(225, 225, 225);
+}
+
+h1 {
+	font-size: 2.5rem;
+}
+
+h2 {
+	font-size: 1.5em;
+}
+
+h3 {
+	font-size: 1.2em;
+}
+
+h1,
+h2 {
+	font-weight: 600;
+	padding: 0.5rem;
+}
+
+a {
+	padding: 0.5rem;
+	color: black;
+	text-decoration: none;
+}
+
+a:hover {
+	color: white;
+	background-color: rgba(0, 0, 0, 0.2);
+	text-decoration: none;
+}
+
+.navCart a {
+	padding: 0;
+	background-color: unset;
+}
+
+.navBar {
+	display: flex;
+	position: sticky;
+	top: 1rem;
+	justify-content: space-between;
+	width: 100%;
+	padding-bottom: 5rem;
+	user-select: none;
+}
+
+.navPages {
+	display: flex;
+	width: 40rem;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.navCart {
+	font-weight: 600;
+	display: flex;
+	justify-content: space-between;
+	width: 15rem;
+	align-items: center;
+	padding: 0.5rem;
+}
+
+img {
+	display: block;
+	height: 1.2rem;
+	width: 1.2rem;
+}
+
+.cartIcon,
+.itemsCount,
+.itemsTotalPrice {
+	padding: 2px;
+}
+
+.cartItems {
+	display: flex;
+	align-items: flex-end;
+}
+
+.itemsCount {
+	font-size: 0.8rem;
+	color: red;
+}
+
+.cart {
+	display: flex;
+	padding: 0.5rem;
+	box-sizing: border-box;
+	position: absolute;
+	height: calc(100% - 5rem);
+	bottom: 0;
+	right: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+	text-align: right;
+	width: 20%;
+}
+
+.close {
+	position: absolute;
+	right: 1rem;
+}
+
+.content {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+}
+
+.productMenu {
+	display: flex;
+	position: sticky;
+	top: 5rem;
+	flex-direction: column;
+	height: fit-content;
+	padding: 1rem;
+	font-size: 1.3rem;
+	font-weight: 600;
+}
+
+.catalogPage {
+	min-width: 75rem;
+	border: 1px solid red;
+	display: grid;
+	grid-template-columns: repeat(4, auto);
+	justify-content: space-between;
+}
+
+.productCard {
+	width: 15rem;
+	background-color: white;
+	padding: 1rem;
+	margin: 1rem;
+}
+
+.productPreview {
+	display: block;
+	margin: 0 auto;
+	height: 10rem;
+	width: 10rem;
+}
+
+.productInfo {
+	border: 1px solid red;
+}
+
+.productName {
+	border: 1px solid red;
+}
+
+.productPrice {
+	border: 1px solid red;
+}
+
+.productDetails {
+	border: 1px solid red;
+}
+
+.detailsModal,
+.detailsCard {
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+}
+
+.detailsModal {
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.detailsCard {
+	top: 50%;
+	left: 50%;
+	height: 200px;
+	width: 200px;
+}
