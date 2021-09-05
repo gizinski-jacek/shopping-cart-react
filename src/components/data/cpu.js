@@ -4,7 +4,7 @@ import ryzen_7_5800x_02 from '../../assets/products/cpu/amd-ryzen-7-5800x-02.jpg
 import ryzen_5_5600x_01 from '../../assets/products/cpu/amd-ryzen-5-5600x-01.jpg';
 import ryzen_5_5600x_02 from '../../assets/products/cpu/amd-ryzen-5-5600x-02.jpg';
 
-import ryzen_3_3300x_01 from '../../assets/products/cpu/amd-ryzen-3-3300x-02.jpg';
+import ryzen_3_3300x_01 from '../../assets/products/cpu/amd-ryzen-3-3300x-01.jpg';
 import ryzen_3_3300x_02 from '../../assets/products/cpu/amd-ryzen-3-3300x-02.jpg';
 
 const cpu = [
