@@ -7,7 +7,6 @@
 body {
 	height: 100vh;
 	width: 100%;
-	padding: 1rem;
 	box-sizing: border-box;
 	background-color: rgb(225, 225, 225);
 }
@@ -48,12 +47,14 @@ a:hover {
 }
 
 .navBar {
+	background-color: cyan;
 	display: flex;
 	position: sticky;
-	top: 1rem;
+	top: 0;
 	justify-content: space-between;
 	width: 100%;
-	padding-bottom: 5rem;
+	padding: 0.5rem;
+	box-sizing: border-box;
 	user-select: none;
 }
 
@@ -128,44 +129,120 @@ img {
 	padding: 1rem;
 	font-size: 1.3rem;
 	font-weight: 600;
+	width: fit-content;
+	white-space: nowrap;
 }
 
 .catalogPage {
-	min-width: 75rem;
-	border: 1px solid red;
 	display: grid;
+	margin: 1rem;
+	width: 100%;
 	grid-template-columns: repeat(4, auto);
+	justify-content: space-evenly;
+}
+
+.quantityControls {
+	display: flex;
 	justify-content: space-between;
+	margin: 0.5rem 1rem;
+}
+
+.decrementBtn,
+.incrementBtn {
+	height: 2rem;
+	width: 3rem;
+	font-weight: 600;
+	border: 1px solid black;
+	border-radius: 5px;
+}
+
+.decrementBtn {
+	background-color: red;
+	font-size: 1.1rem;
+}
+
+.incrementBtn {
+	background-color: green;
+	font-size: 1.2rem;
+}
+
+.itemQuantity {
+	width: 5rem;
+	font-size: 1rem;
 }
 
 .productCard {
-	width: 15rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 20rem;
 	background-color: white;
 	padding: 1rem;
 	margin: 1rem;
+	border-radius: 10px;
 }
 
 .productPreview {
 	display: block;
-	margin: 0 auto;
-	height: 10rem;
-	width: 10rem;
+	margin: 2rem auto 3rem auto;
+	height: 8rem;
+	width: 8rem;
+	transition: transform linear 0.3s;
+}
+
+.productPreview:not(:hover) {
+	transition: transform linear 0.1s;
+}
+
+.productPreview:hover {
+	transform: scale(1.6);
 }
 
 .productInfo {
-	border: 1px solid red;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	text-align: center;
+	min-height: 12rem;
+	margin: 0.5rem;
+	line-height: 1.2rem;
+}
+
+.productInfo div {
+	display: flex;
+	flex-direction: column;
+}
+
+.productInfo div div {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
 }
 
 .productName {
-	border: 1px solid red;
+	font-size: 1.2rem;
+	justify-content: center;
+	margin: 0.5rem 1rem;
+	line-height: 1.5rem;
 }
 
 .productPrice {
-	border: 1px solid red;
+	margin: 1rem;
 }
 
 .productDetails {
+	font-size: 0.8rem;
+	margin: 0.5rem 1rem;
+	color: rgb(50, 150, 200);
+	padding: 0 5px;
 	border: 1px solid red;
+	border-radius: 5px;
+}
+
+.productDetails:hover {
+	color: red;
+	cursor: pointer;
 }
 
 .detailsModal,
@@ -176,6 +253,7 @@ img {
 }
 
 .detailsModal {
+	position: fixed;
 	top: 0;
 	left: 0;
 	width: 100%;
@@ -183,9 +261,32 @@ img {
 	background-color: rgba(0, 0, 0, 0.5);
 }
 
+.gallery img {
+	height: 500px;
+	width: 500px;
+}
+
 .detailsCard {
-	top: 50%;
-	left: 50%;
 	height: 200px;
 	width: 200px;
+}
+
+@media (max-width: 1760px) {
+	.catalogPage {
+		display: grid;
+		margin: 1rem;
+		width: 100%;
+		grid-template-columns: repeat(3, auto);
+		justify-content: space-evenly;
+	}
+}
+
+@media (max-width: 1370px) {
+	.catalogPage {
+		display: grid;
+		margin: 1rem;
+		width: 100%;
+		grid-template-columns: repeat(2, auto);
+		justify-content: space-evenly;
+	}
 }
