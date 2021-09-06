@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 function ProductCard(props) {
-	const { categoryId, name, price, preview } = props.data;
+	const { Name, Price, preview } = props.data;
 	const [showModal, setShowModal] = useState('none');
 	const [itemQuantity, setItemQuantity] = useState(1);
 
@@ -13,6 +13,14 @@ function ProductCard(props) {
 		if (e.target.className === 'detailsModal') {
 			setShowModal('none');
 		}
+	};
+
+	const handleChange = (e) => {
+		let value = Number(e.target.value);
+		if (value >= 100) {
+			value = 100;
+		}
+		setItemQuantity(value);
 	};
 
 	const decrement = () => {
@@ -29,35 +37,38 @@ function ProductCard(props) {
 
 	return (
 		<div className='productCard'>
-			<img className='productPreview' src={preview} alt={name} />
+			<img className='productPreview' src={preview} alt={Name} />
 			<div className='productInfo'>
-				<div className='productName'>{name}</div>
+				<div className='productName'>{Name}</div>
 				<div>
 					<div>
-						<div className='productDetails' onClick={toggleCardOn}>
+						<div className='detailsBtn' onClick={toggleCardOn}>
 							Details
 						</div>
-						<div className='productPrice'>Price: {price}</div>
+						<div className='productPrice'>{Price + ' \u20AC'}</div>
 					</div>
 					<div className='quantityControls'>
 						<button className='decrementBtn' onClick={decrement}>
 							&#8722;
 						</button>
-						<input className='itemQuantity' value={itemQuantity} />
+						<input
+							className='itemQuantity'
+							value={itemQuantity}
+							max='100'
+							onChange={handleChange}
+						/>
 						<button className='incrementBtn' onClick={increment}>
 							&#43;
 						</button>
 					</div>
-					<div
-						className='detailsModal'
-						style={{ display: showModal }}
-						onClick={(e) => {
-							toggleCardOff(e);
-						}}
-					>
-						{props.children}
-					</div>
 				</div>
+			</div>
+			<div
+				className='detailsModal'
+				style={{ display: showModal }}
+				onClick={toggleCardOff}
+			>
+				{props.children}
 			</div>
 		</div>
 	);
