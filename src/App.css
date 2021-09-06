@@ -147,9 +147,22 @@ img {
 	margin: 0.5rem 1rem;
 }
 
+.addToCartBtn {
+	background-color: rgb(240, 240, 0);
+	border: 1px solid black;
+	border-radius: 5px;
+	margin: 0.5rem 1rem;
+	padding: 0.25rem;
+}
+
+.addToCartBtn:hover {
+	background-color: rgb(255, 255, 0);
+}
+
 .decrementBtn,
 .incrementBtn {
 	font-family: monospace;
+	font-size: 1.2rem;
 	height: 2rem;
 	width: 3rem;
 	font-weight: 600;
@@ -158,13 +171,19 @@ img {
 }
 
 .decrementBtn {
-	background-color: red;
-	font-size: 1.1rem;
+	background-color: rgb(225, 0, 0);
 }
 
 .incrementBtn {
-	background-color: green;
-	font-size: 1.2rem;
+	background-color: rgb(0, 225, 0);
+}
+
+.decrementBtn:hover {
+	background-color: rgb(255, 0, 0);
+}
+
+.incrementBtn:hover {
+	background-color: rgb(0, 255, 0);
 }
 
 .itemQuantity {
@@ -184,6 +203,7 @@ img {
 }
 
 .productPreview {
+	user-select: none;
 	display: block;
 	margin: 2rem auto 3rem auto;
 	height: 8rem;
@@ -233,17 +253,19 @@ img {
 }
 
 .detailsBtn {
+	user-select: none;
 	font-family: monospace;
 	font-size: 0.8rem;
 	margin: 0.5rem 1rem;
 	color: rgb(50, 125, 200);
+	border: 1px solid red;
 	padding: 0.1rem 0.25rem;
 	line-height: 1.2rem;
-	border: 1px solid red;
 	border-radius: 5px;
 }
 
 .detailsBtn:hover {
+	border: 1px solid rgb(50, 125, 200);
 	color: red;
 	cursor: pointer;
 }
@@ -355,6 +377,7 @@ img {
 }
 
 .container {
+	user-select: none;
 	position: relative;
 	background-color: white;
 	padding: 1rem 3rem;
