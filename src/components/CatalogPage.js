@@ -32,7 +32,7 @@ const CatalogPage = (props) => {
 			if (item.categoryId === 'cpu') {
 				return (
 					<ProductCard
-						key={index + '_' + item.categoryId + '_' + item.name}
+						key={item.categoryId + index + item.name}
 						data={item}
 						addToCart={props.addToCart}
 					>
@@ -49,7 +49,7 @@ const CatalogPage = (props) => {
 			if (item.categoryId === 'gpu') {
 				return (
 					<ProductCard
-						key={index + '_' + item.categoryId + '_' + item.name}
+						key={item.categoryId + index + item.name}
 						data={item}
 						addToCart={props.addToCart}
 					>
@@ -66,7 +66,7 @@ const CatalogPage = (props) => {
 			if (item.categoryId === 'memory') {
 				return (
 					<ProductCard
-						key={index + '_' + item.categoryId + '_' + item.name}
+						key={item.categoryId + index + item.name}
 						data={item}
 						addToCart={props.addToCart}
 					>
@@ -83,7 +83,7 @@ const CatalogPage = (props) => {
 			if (item.categoryId === 'mboard') {
 				return (
 					<ProductCard
-						key={index + '_' + item.categoryId + '_' + item.name}
+						key={item.categoryId + index + item.name}
 						data={item}
 						addToCart={props.addToCart}
 					>
@@ -100,7 +100,7 @@ const CatalogPage = (props) => {
 			if (item.categoryId === 'psu') {
 				return (
 					<ProductCard
-						key={index + '_' + item.categoryId + '_' + item.name}
+						key={item.categoryId + index + item.name}
 						data={item}
 						addToCart={props.addToCart}
 					>
@@ -117,7 +117,7 @@ const CatalogPage = (props) => {
 			if (item.categoryId === 'storage') {
 				return (
 					<ProductCard
-						key={index + '_' + item.categoryId + '_' + item.name}
+						key={item.categoryId + index + item.name}
 						data={item}
 						addToCart={props.addToCart}
 					>
@@ -134,7 +134,7 @@ const CatalogPage = (props) => {
 			if (item.categoryId === 'chassis') {
 				return (
 					<ProductCard
-						key={index + '_' + item.categoryId + '_' + item.name}
+						key={item.categoryId + index + item.name}
 						data={item}
 						addToCart={props.addToCart}
 					>

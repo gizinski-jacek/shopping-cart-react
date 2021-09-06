@@ -5,14 +5,14 @@ const DataWrapper = (props) => {
 		if (key !== 'categoryId' && key !== 'preview' && key !== 'gallery') {
 			if (key === 'Price') {
 				return (
-					<div key={data.categoryId + '_' + index + '_' + key}>
+					<div key={data.categoryId + index + key}>
 						<p>{key + ': '}</p>
 						<p>{value + ' \u20AC'}</p>
 					</div>
 				);
 			} else {
 				return (
-					<div key={data.categoryId + '_' + index + '_' + key}>
+					<div key={data.categoryId + index + key}>
 						<p>{key + ': '}</p>
 						<p>{value}</p>
 					</div>
