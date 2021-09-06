@@ -38,7 +38,10 @@ const CatalogPage = (props) => {
 					>
 						<div className='detailsCard'>
 							<DataWrapper data={item} />
-							<ImageSlider gallery={item.gallery} />
+							<ImageSlider
+								category={item.categoryId}
+								gallery={item.gallery}
+							/>
 						</div>
 					</ProductCard>
 				);
@@ -52,7 +55,10 @@ const CatalogPage = (props) => {
 					>
 						<div className='detailsCard'>
 							<DataWrapper data={item} />
-							<ImageSlider gallery={item.gallery} />
+							<ImageSlider
+								category={item.categoryId}
+								gallery={item.gallery}
+							/>
 						</div>
 					</ProductCard>
 				);
@@ -66,7 +72,10 @@ const CatalogPage = (props) => {
 					>
 						<div className='detailsCard'>
 							<DataWrapper data={item} />
-							<ImageSlider gallery={item.gallery} />
+							<ImageSlider
+								category={item.categoryId}
+								gallery={item.gallery}
+							/>
 						</div>
 					</ProductCard>
 				);
@@ -80,7 +89,10 @@ const CatalogPage = (props) => {
 					>
 						<div className='detailsCard'>
 							<DataWrapper data={item} />
-							<ImageSlider gallery={item.gallery} />
+							<ImageSlider
+								category={item.categoryId}
+								gallery={item.gallery}
+							/>
 						</div>
 					</ProductCard>
 				);
@@ -94,7 +106,10 @@ const CatalogPage = (props) => {
 					>
 						<div className='detailsCard'>
 							<DataWrapper data={item} />
-							<ImageSlider gallery={item.gallery} />
+							<ImageSlider
+								category={item.categoryId}
+								gallery={item.gallery}
+							/>
 						</div>
 					</ProductCard>
 				);
@@ -108,7 +123,10 @@ const CatalogPage = (props) => {
 					>
 						<div className='detailsCard'>
 							<DataWrapper data={item} />
-							<ImageSlider gallery={item.gallery} />
+							<ImageSlider
+								category={item.categoryId}
+								gallery={item.gallery}
+							/>
 						</div>
 					</ProductCard>
 				);
@@ -122,7 +140,10 @@ const CatalogPage = (props) => {
 					>
 						<div className='detailsCard'>
 							<DataWrapper data={item} />
-							<ImageSlider gallery={item.gallery} />
+							<ImageSlider
+								category={item.categoryId}
+								gallery={item.gallery}
+							/>
 						</div>
 					</ProductCard>
 				);
