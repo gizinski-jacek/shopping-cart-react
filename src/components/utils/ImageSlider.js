@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const ImageSlider = (props) => {
-	const { gallery } = props;
+	const { category, gallery } = props;
 	const [slideIndex, setSlideIndex] = useState(0);
 
 	const prevSlide = () => {
@@ -30,7 +30,7 @@ const ImageSlider = (props) => {
 	const galleryDisplay = gallery.map((item, index) => {
 		return (
 			<div
-				key={index}
+				key={'gallery ' + category + '_' + index}
 				style={{ display: index === slideIndex ? 'block' : 'none' }}
 				className='slide animation'
 			>
@@ -42,6 +42,7 @@ const ImageSlider = (props) => {
 	const galleryDots = gallery.map((item, index) => {
 		return (
 			<span
+				key={'galleryDot ' + category + '_' + index}
 				className={index === slideIndex ? 'dot active' : 'dot'}
 				onClick={changeSlideWithDots}
 			></span>

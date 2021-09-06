@@ -1,18 +1,18 @@
 const DataWrapper = (props) => {
 	const { data } = props;
 
-	const content = Object.entries(data).map(([key, value]) => {
+	const content = Object.entries(data).map(([key, value], index) => {
 		if (key !== 'categoryId' && key !== 'preview' && key !== 'gallery') {
 			if (key === 'Price') {
 				return (
-					<div>
+					<div key={data.categoryId + '_' + index + '_' + key}>
 						<p>{key + ': '}</p>
 						<p>{value + ' \u20AC'}</p>
 					</div>
 				);
 			} else {
 				return (
-					<div>
+					<div key={data.categoryId + '_' + index + '_' + key}>
 						<p>{key + ': '}</p>
 						<p>{value}</p>
 					</div>
