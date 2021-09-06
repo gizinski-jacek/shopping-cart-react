@@ -6,11 +6,22 @@ import Shop from './components/Shop';
 import Cart from './components/Cart';
 import { useState } from 'react';
 
-function App() {
+const App = () => {
 	const [showCart, setShowCart] = useState(false);
+	const [cartContents, setCartContents] = useState([]);
 
 	const toggleCartDisplay = () => {
 		setShowCart((prevState) => !prevState);
+	};
+
+	const addItemToCart = (item) => {
+		setCartContents((prevState) => [...prevState, item]);
+	};
+
+	const removeItemFromCart = (remove) => {
+		setCartContents((prevState) => [
+			prevState.filter((item) => item !== remove),
+		]);
 	};
 
 	return (
@@ -18,11 +29,19 @@ function App() {
 			<NavBar toggle={toggleCartDisplay} />
 			<Switch>
 				<Route exact path='/' component={Home} />
-				<Route exact path='/shop' component={Shop} />
+				<Route exact path='/shop'>
+					<Shop addToCart={addItemToCart} />
+				</Route>
 			</Switch>
-			{showCart ? <Cart toggle={toggleCartDisplay} /> : null}
+			{showCart ? (
+				<Cart
+					data={cartContents}
+					remove={removeItemFromCart}
+					toggle={toggleCartDisplay}
+				/>
+			) : null}
 		</BrowserRouter>
 	);
-}
+};
 
 export default App;
