@@ -61,6 +61,12 @@ const ProductCard = (props) => {
 							&#43;
 						</button>
 					</div>
+					<button
+						className='addToCartBtn'
+						onClick={() => props.addToCart(props.data)}
+					>
+						Add To Cart
+					</button>
 				</div>
 			</div>
 			<div
