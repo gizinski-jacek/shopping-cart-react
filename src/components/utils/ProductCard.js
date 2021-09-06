@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-function ProductCard(props) {
+const ProductCard = (props) => {
 	const { Name, Price, preview } = props.data;
 	const [showModal, setShowModal] = useState('none');
 	const [itemQuantity, setItemQuantity] = useState(1);
@@ -72,6 +72,6 @@ function ProductCard(props) {
 			</div>
 		</div>
 	);
-}
+};
 
 export default ProductCard;

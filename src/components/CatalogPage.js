@@ -5,7 +5,7 @@ import ProductCard from './utils/ProductCard';
 import DataWrapper from './utils/DataWrapper';
 import ImageSlider from './utils/ImageSlider';
 
-function CatalogPage(props) {
+const CatalogPage = (props) => {
 	const { productType } = useParams();
 	const [displayContent, setDisplayContent] = useState([]);
 
@@ -133,6 +133,6 @@ function CatalogPage(props) {
 	}, [productType, props.addToCart]);
 
 	return <div className='catalogPage'>{displayContent}</div>;
-}
+};
 
 export default CatalogPage;
