@@ -2,19 +2,14 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import allProducts from './data/allProducts';
 import ProductCard from './utils/ProductCard';
-import DetailsChassis from './utils/DetailsChassis';
-import DetailsCPU from './utils/DetailsCPU';
-import DetailsGPU from './utils/DetailsGPU';
-import DetailsMboard from './utils/DetailsMboard';
-import DetailsMemory from './utils/DetailsMemory';
-import DetailsPSU from './utils/DetailsPSU';
-import DetailsStorage from './utils/DetailsStorage';
+import DataWrapper from './utils/DataWrapper';
+import ImageSlider from './utils/ImageSlider';
 
 function CatalogPage(props) {
 	const { productType } = useParams();
 	const [displayContent, setDisplayContent] = useState([]);
 
-	function shuffleArray(array) {
+	const shuffleArray = (array) => {
 		let i = array.length;
 		let r;
 		while (i !== 0) {
@@ -23,7 +18,7 @@ function CatalogPage(props) {
 			[array[i], array[r]] = [array[r], array[i]];
 		}
 		return array;
-	}
+	};
 
 	useEffect(() => {
 		let productList = shuffleArray(allProducts);
@@ -39,12 +34,12 @@ function CatalogPage(props) {
 					<ProductCard
 						key={index + '_' + item.categoryId + '_' + item.name}
 						data={item}
+						addToCart={props.addToCart}
 					>
-						<DetailsCPU
-							key={'modal_' + item.categoryId + '_' + index}
-							id={'modal_' + item.categoryId + '_' + index}
-							data={item}
-						/>
+						<div className='detailsCard'>
+							<DataWrapper data={item} />
+							<ImageSlider gallery={item.gallery} />
+						</div>
 					</ProductCard>
 				);
 			}
@@ -53,11 +48,12 @@ function CatalogPage(props) {
 					<ProductCard
 						key={index + '_' + item.categoryId + '_' + item.name}
 						data={item}
+						addToCart={props.addToCart}
 					>
-						<DetailsGPU
-							key={'modal_' + item.categoryId + '_' + index}
-							data={item}
-						/>
+						<div className='detailsCard'>
+							<DataWrapper data={item} />
+							<ImageSlider gallery={item.gallery} />
+						</div>
 					</ProductCard>
 				);
 			}
@@ -66,11 +62,12 @@ function CatalogPage(props) {
 					<ProductCard
 						key={index + '_' + item.categoryId + '_' + item.name}
 						data={item}
+						addToCart={props.addToCart}
 					>
-						<DetailsMemory
-							key={'modal_' + item.categoryId + '_' + index}
-							data={item}
-						/>
+						<div className='detailsCard'>
+							<DataWrapper data={item} />
+							<ImageSlider gallery={item.gallery} />
+						</div>
 					</ProductCard>
 				);
 			}
@@ -79,11 +76,12 @@ function CatalogPage(props) {
 					<ProductCard
 						key={index + '_' + item.categoryId + '_' + item.name}
 						data={item}
+						addToCart={props.addToCart}
 					>
-						<DetailsMboard
-							key={'modal_' + item.categoryId + '_' + index}
-							data={item}
-						/>
+						<div className='detailsCard'>
+							<DataWrapper data={item} />
+							<ImageSlider gallery={item.gallery} />
+						</div>
 					</ProductCard>
 				);
 			}
@@ -92,11 +90,12 @@ function CatalogPage(props) {
 					<ProductCard
 						key={index + '_' + item.categoryId + '_' + item.name}
 						data={item}
+						addToCart={props.addToCart}
 					>
-						<DetailsPSU
-							key={'modal_' + item.categoryId + '_' + index}
-							data={item}
-						/>
+						<div className='detailsCard'>
+							<DataWrapper data={item} />
+							<ImageSlider gallery={item.gallery} />
+						</div>
 					</ProductCard>
 				);
 			}
@@ -105,11 +104,12 @@ function CatalogPage(props) {
 					<ProductCard
 						key={index + '_' + item.categoryId + '_' + item.name}
 						data={item}
+						addToCart={props.addToCart}
 					>
-						<DetailsStorage
-							key={'modal_' + item.categoryId + '_' + index}
-							data={item}
-						/>
+						<div className='detailsCard'>
+							<DataWrapper data={item} />
+							<ImageSlider gallery={item.gallery} />
+						</div>
 					</ProductCard>
 				);
 			}
@@ -118,18 +118,19 @@ function CatalogPage(props) {
 					<ProductCard
 						key={index + '_' + item.categoryId + '_' + item.name}
 						data={item}
+						addToCart={props.addToCart}
 					>
-						<DetailsChassis
-							key={'modal_' + item.categoryId + '_' + index}
-							data={item}
-						/>
+						<div className='detailsCard'>
+							<DataWrapper data={item} />
+							<ImageSlider gallery={item.gallery} />
+						</div>
 					</ProductCard>
 				);
 			}
 			return null;
 		});
 		setDisplayContent(newContent);
-	}, [productType]);
+	}, [productType, props.addToCart]);
 
 	return <div className='catalogPage'>{displayContent}</div>;
 }
