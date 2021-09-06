@@ -7,13 +7,13 @@ import {
 } from 'react-router-dom';
 import CatalogPage from './CatalogPage';
 
-function Shop() {
+const Shop = (props) => {
 	let match = useRouteMatch();
 	return (
 		<BrowserRouter>
 			<div className='content'>
 				<div className='productMenu'>
-					<Link to={match.url}>All</Link>
+					<Link to={match.url}>All Products</Link>
 					<Link to={match.url + '/cpu'}>Processors</Link>
 					<Link to={match.url + '/gpu'}>Video Card</Link>
 					<Link to={match.url + '/memory'}>Memory</Link>
@@ -24,15 +24,15 @@ function Shop() {
 				</div>
 				<Switch>
 					<Route exact path={match.path}>
-						<CatalogPage />
+						<CatalogPage addToCart={props.addToCart} />
 					</Route>
 					<Route exact path={match.path + '/:productType'}>
-						<CatalogPage />
+						<CatalogPage addToCart={props.addToCart} />
 					</Route>
 				</Switch>
 			</div>
 		</BrowserRouter>
 	);
-}
+};
 
 export default Shop;
