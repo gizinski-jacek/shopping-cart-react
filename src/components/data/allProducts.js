@@ -1,7 +1,7 @@
 import cpu from './cpu';
 import gpu from './gpu';
 import memory from './memory';
-import mboard from './mboard';
+import motherboard from './motherboard';
 import psu from './psu';
 import storage from './storage';
 import chassis from './chassis';
@@ -10,7 +10,7 @@ const allProducts = [
 	...cpu,
 	...gpu,
 	...memory,
-	...mboard,
+	...motherboard,
 	...psu,
 	...storage,
 	...chassis,
