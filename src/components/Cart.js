@@ -2,14 +2,14 @@ import { Link } from 'react-router-dom';
 import CartItemWrapper from './utils/CartItemWrapper';
 
 const Cart = (props) => {
-	const { data, toggle } = props;
-	const { remove } = props;
+	const { data, toggle, change, remove } = props;
 
 	const content = data.map((item, index) => {
 		return (
 			<CartItemWrapper
 				key={item.categoryId + index + item.Name}
 				data={item}
+				change={change}
 				remove={remove}
 			/>
 		);
