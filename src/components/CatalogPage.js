@@ -7,6 +7,7 @@ import ImageSlider from './utils/ImageSlider';
 
 const CatalogPage = (props) => {
 	const { productType } = useParams();
+	const { addToCart } = props;
 	const [displayContent, setDisplayContent] = useState([]);
 
 	const shuffleArray = (array) => {
@@ -34,7 +35,7 @@ const CatalogPage = (props) => {
 					<ProductCard
 						key={item.categoryId + index + item.name}
 						data={item}
-						addToCart={props.addToCart}
+						addToCart={addToCart}
 					>
 						<div className='detailsCard'>
 							<DataWrapper data={item} />
@@ -51,7 +52,7 @@ const CatalogPage = (props) => {
 					<ProductCard
 						key={item.categoryId + index + item.name}
 						data={item}
-						addToCart={props.addToCart}
+						addToCart={addToCart}
 					>
 						<div className='detailsCard'>
 							<DataWrapper data={item} />
@@ -68,7 +69,7 @@ const CatalogPage = (props) => {
 					<ProductCard
 						key={item.categoryId + index + item.name}
 						data={item}
-						addToCart={props.addToCart}
+						addToCart={addToCart}
 					>
 						<div className='detailsCard'>
 							<DataWrapper data={item} />
@@ -80,12 +81,12 @@ const CatalogPage = (props) => {
 					</ProductCard>
 				);
 			}
-			if (item.categoryId === 'mboard') {
+			if (item.categoryId === 'motherboard') {
 				return (
 					<ProductCard
 						key={item.categoryId + index + item.name}
 						data={item}
-						addToCart={props.addToCart}
+						addToCart={addToCart}
 					>
 						<div className='detailsCard'>
 							<DataWrapper data={item} />
@@ -102,7 +103,7 @@ const CatalogPage = (props) => {
 					<ProductCard
 						key={item.categoryId + index + item.name}
 						data={item}
-						addToCart={props.addToCart}
+						addToCart={addToCart}
 					>
 						<div className='detailsCard'>
 							<DataWrapper data={item} />
@@ -119,7 +120,7 @@ const CatalogPage = (props) => {
 					<ProductCard
 						key={item.categoryId + index + item.name}
 						data={item}
-						addToCart={props.addToCart}
+						addToCart={addToCart}
 					>
 						<div className='detailsCard'>
 							<DataWrapper data={item} />
@@ -136,7 +137,7 @@ const CatalogPage = (props) => {
 					<ProductCard
 						key={item.categoryId + index + item.name}
 						data={item}
-						addToCart={props.addToCart}
+						addToCart={addToCart}
 					>
 						<div className='detailsCard'>
 							<DataWrapper data={item} />
@@ -151,7 +152,7 @@ const CatalogPage = (props) => {
 			return null;
 		});
 		setDisplayContent(newContent);
-	}, [productType, props.addToCart]);
+	}, [productType, addToCart]);
 
 	return <div className='catalogPage'>{displayContent}</div>;
 };
