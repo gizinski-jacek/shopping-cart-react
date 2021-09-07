@@ -9,6 +9,7 @@ import { useState } from 'react';
 const App = () => {
 	const [showCart, setShowCart] = useState(false);
 	const [cartContents, setCartContents] = useState([]);
+	console.log(cartContents);
 
 	const toggleCartDisplay = () => {
 		setShowCart((prevState) => !prevState);
@@ -20,7 +21,7 @@ const App = () => {
 
 	const removeItemFromCart = (remove) => {
 		setCartContents((prevState) => [
-			prevState.filter((item) => item !== remove),
+			...prevState.filter((item) => item !== remove),
 		]);
 	};
 
