@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 
 const NavBar = (props) => {
+	const { totalPrice, totalCount, toggle } = props;
 	return (
 		<div className='navBar'>
 			<div className='navPages'>
@@ -13,14 +14,16 @@ const NavBar = (props) => {
 				</h2>
 			</div>
 			<div className='navCart'>
-				<h3 className='itemsTotalPrice'>Value: 55555$</h3>
-				<div className='cartItems' onClick={props.toggle}>
+				<h3 className='itemsTotalPrice'>
+					Total: {totalPrice + ' \u20AC'}
+				</h3>
+				<div className='cartTotalCount' onClick={toggle}>
 					<img
 						className='cartIcon'
 						src='/assets/cartIcon.svg'
 						alt=''
 					/>
-					<div className='itemsCount'>3</div>
+					<div className='itemsCount'>{totalCount}</div>
 				</div>
 			</div>
 		</div>
