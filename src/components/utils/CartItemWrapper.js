@@ -1,6 +1,6 @@
 const CartItemWrapper = (props) => {
-	const { Name, Price, preview, count, change } = props.data;
-	const { data, remove } = props;
+	const { Name, Price, preview, count } = props.data;
+	const { data, change, remove } = props;
 
 	return (
 		<div className='cartItem'>
@@ -10,7 +10,12 @@ const CartItemWrapper = (props) => {
 			</div>
 			<div className='toRight'>
 				<div className='cartItemPrice'>{Price + ' \u20AC'}</div>
-				<input type='number' className='cartItemCount' value={count} />
+				<input
+					type='number'
+					className='cartItemCount'
+					value={count}
+					onChange={(e) => change(e, data)}
+				/>
 			</div>
 			<div className='divRelative'>
 				<img
