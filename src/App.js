@@ -16,8 +16,20 @@ const App = () => {
 		setShowCart((prevState) => !prevState);
 	};
 
-	const addItemToCart = (item, quantity) => {
-		const duplicate = cartContents.find((dup) => dup === item);
+	const changeItemCount = (e, oldItem) => {
+		const { value } = e.target;
+		if (value > 100 || value < 1) {
+			return;
+		}
+		setCartContents((prevState) => [
+			...prevState.filter((item) => item !== oldItem),
+		]);
+		oldItem.count = Number(value);
+		setCartContents((prevState) => [...prevState, oldItem]);
+	};
+
+	const addItemToCart = (newItem, quantity) => {
+		const duplicate = cartContents.find((dup) => dup === newItem);
 		if (duplicate) {
 			setCartContents((prevState) => [
 				...prevState.filter((item) => item !== duplicate),
@@ -25,14 +37,14 @@ const App = () => {
 			duplicate.count += quantity;
 			setCartContents((prevState) => [...prevState, duplicate]);
 		} else {
-			item.count = quantity;
-			setCartContents((prevState) => [...prevState, item]);
+			newItem.count = quantity;
+			setCartContents((prevState) => [...prevState, newItem]);
 		}
 	};
 
-	const removeItemFromCart = (remove) => {
+	const removeItemFromCart = (removeItem) => {
 		setCartContents((prevState) => [
-			...prevState.filter((item) => item !== remove),
+			...prevState.filter((item) => item !== removeItem),
 		]);
 	};
 
@@ -65,8 +77,9 @@ const App = () => {
 			{showCart ? (
 				<Cart
 					data={cartContents}
-					remove={removeItemFromCart}
 					toggle={toggleCartDisplay}
+					change={changeItemCount}
+					remove={removeItemFromCart}
 				/>
 			) : null}
 		</BrowserRouter>
