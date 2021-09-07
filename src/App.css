@@ -235,6 +235,26 @@ img {
 	white-space: nowrap;
 }
 
+.productMenu a {
+	cursor: default;
+}
+
+.productMenu a:hover {
+	animation: bar 0.5s ease forwards;
+}
+
+@keyframes bar {
+	0% {
+		background-color: rgba(0, 0, 0, 0.1);
+		width: 0%;
+	}
+	100% {
+		background-color: rgba(0, 0, 0, 1);
+		color: rgb(255, 255, 255);
+		width: 100%;
+	}
+}
+
 .catalogPage {
 	display: grid;
 	margin: 1rem;
@@ -366,7 +386,7 @@ img {
 	font-size: 0.8rem;
 	margin: 0.5rem 1rem;
 	color: rgb(50, 125, 200);
-	border: 1px solid rgb(255, 0, 0);
+	border: 1px solid rgb(50, 125, 200);
 	padding: 0.1rem 0.25rem;
 	line-height: 1.2rem;
 	border-radius: 5px;
@@ -374,7 +394,7 @@ img {
 
 .detailsBtn:hover {
 	border: 1px solid rgb(50, 125, 200);
-	color: rgb(255, 0, 0);
+	color: rgb(50, 125, 200);
 	cursor: pointer;
 }
 
