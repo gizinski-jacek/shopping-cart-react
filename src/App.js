@@ -4,6 +4,7 @@ import NavBar from './components/NavBar';
 import Home from './components/Home';
 import Shop from './components/Shop';
 import Cart from './components/Cart';
+import Checkout from './components/Checkout';
 import { useEffect, useState } from 'react';
 
 const App = () => {
@@ -16,29 +17,53 @@ const App = () => {
 		setShowCart((prevState) => !prevState);
 	};
 
-	const changeItemCount = (e, oldItem) => {
+	const changeItemCount = (e, itemToUpdate) => {
 		const { value } = e.target;
 		if (value > 100 || value < 1) {
 			return;
 		}
-		setCartContents((prevState) => [
-			...prevState.filter((item) => item !== oldItem),
-		]);
-		oldItem.count = Number(value);
-		setCartContents((prevState) => [...prevState, oldItem]);
+
+		// This was the first iteration of doing update I picked up on internet,
+		// but won't use it for now since I dont understand why it's working
+		// even though the log throws false on every check. Will do more
+		// research into it to figure out why.
+		// itemToUpdate.count = value;
+		// const newState = cartContents.map((item, index) => {
+		// 	console.log(index === itemToUpdate.index);
+		// 	return index === itemToUpdate.index ? itemToUpdate : item;
+		// });
+
+		// This was second iteration built upon knowledge from previous on
+		// after slight modification. Looks a bit messy but does the job.
+		// const oldIndex = cartContents.indexOf(itemToUpdate);
+		// itemToUpdate.count = Number(value);
+		// const newState = cartContents.map((item, index) => {
+		// 	console.log(index === oldIndex);
+		// 	return index === oldIndex ? itemToUpdate : item;
+		// });
+
+		// Third iteration using spread syntax, much cleaner. Will use
+		// this one until I figure out the workings behind first iteration.
+		const newState = cartContents.map((item) => {
+			console.log(item === itemToUpdate);
+			return item === itemToUpdate ? { ...item, count: value } : item;
+		});
+		setCartContents(newState);
 	};
 
 	const addItemToCart = (newItem, quantity) => {
-		const duplicate = cartContents.find((dup) => dup === newItem);
+		const duplicate = cartContents.find((dup) => dup.Name === newItem.Name);
 		if (duplicate) {
-			setCartContents((prevState) => [
-				...prevState.filter((item) => item !== duplicate),
-			]);
 			duplicate.count += quantity;
-			setCartContents((prevState) => [...prevState, duplicate]);
+			const newState = cartContents.map((item) => {
+				return item === newItem ? duplicate : item;
+			});
+			setCartContents(newState);
 		} else {
-			newItem.count = quantity;
-			setCartContents((prevState) => [...prevState, newItem]);
+			setCartContents((prevState) => [
+				...prevState,
+				{ ...newItem, count: quantity },
+			]);
 		}
 	};
 
@@ -72,7 +97,9 @@ const App = () => {
 				<Route exact path='/shop'>
 					<Shop addToCart={addItemToCart} />
 				</Route>
-				<Route exact path='/checkout' component={Home} />
+				<Route exact path='/checkout'>
+					<Checkout />
+				</Route>
 			</Switch>
 			{showCart ? (
 				<Cart
