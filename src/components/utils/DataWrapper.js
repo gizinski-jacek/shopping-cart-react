@@ -2,7 +2,9 @@ const DataWrapper = (props) => {
 	const { data } = props;
 
 	const content = Object.entries(data).map(([key, value], index) => {
-		if (key !== 'categoryId' && key !== 'preview' && key !== 'gallery') {
+		if (key === 'categoryId' || key === 'preview' || key === 'gallery') {
+			return null;
+		} else {
 			if (key === 'Price') {
 				return (
 					<div key={data.categoryId + index + key}>
@@ -19,8 +21,8 @@ const DataWrapper = (props) => {
 				);
 			}
 		}
-		return null;
 	});
+
 	return <div className='moreDetails'>{content}</div>;
 };
 
