@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 const ProductCard = (props) => {
 	const { Name, Price, preview } = props.data;
+	const { addToCart, data, children } = props;
 	const [showModal, setShowModal] = useState('none');
 	const [itemQuantity, setItemQuantity] = useState(1);
 
@@ -63,7 +64,7 @@ const ProductCard = (props) => {
 					</div>
 					<button
 						className='addToCartBtn'
-						onClick={() => props.addToCart(props.data)}
+						onClick={() => addToCart(data, itemQuantity)}
 					>
 						Add To Cart
 					</button>
@@ -74,7 +75,7 @@ const ProductCard = (props) => {
 				style={{ display: showModal }}
 				onClick={toggleCardOff}
 			>
-				{props.children}
+				{children}
 			</div>
 		</div>
 	);
