@@ -44,8 +44,6 @@ a:hover {
 .navBar {
 	background-color: rgb(0, 255, 150);
 	display: flex;
-	position: sticky;
-	top: 0;
 	justify-content: space-between;
 	width: 100%;
 	padding: 0.5rem;
@@ -227,8 +225,6 @@ img {
 
 .productMenu {
 	display: flex;
-	position: sticky;
-	top: 5rem;
 	flex-direction: column;
 	height: fit-content;
 	padding: 1rem;
