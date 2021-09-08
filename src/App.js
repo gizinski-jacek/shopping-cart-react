@@ -45,8 +45,9 @@ const App = () => {
 		// Third iteration using spread syntax, much cleaner. Will use
 		// this one until I figure out the workings behind first iteration.
 		const newState = cartContents.map((item) => {
-			console.log(item === itemToUpdate);
-			return item === itemToUpdate ? { ...item, count: value } : item;
+			return item === itemToUpdate
+				? { ...item, count: Number(value) }
+				: item;
 		});
 		setCartContents(newState);
 	};
