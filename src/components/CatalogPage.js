@@ -22,12 +22,13 @@ const CatalogPage = (props) => {
 	};
 
 	useEffect(() => {
-		let productList = shuffleArray(allProducts);
+		let productList = [];
 		if (productType) {
-			const newList = productList.filter(
+			productList = allProducts.filter(
 				(item) => item.categoryId === productType
 			);
-			productList = newList;
+		} else {
+			productList = shuffleArray(allProducts);
 		}
 		const newContent = productList.map((item, index) => {
 			if (item.categoryId === 'cpu') {
