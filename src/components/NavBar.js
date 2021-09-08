@@ -17,7 +17,7 @@ const NavBar = (props) => {
 				<h3 className='itemsTotalPrice'>
 					Total: {totalPrice + ' \u20AC'}
 				</h3>
-				<div className='cartTotalCount' onClick={toggle}>
+				<div className='cartIconCount' onClick={toggle}>
 					<img
 						className='cartIcon'
 						src='/assets/cartIcon.svg'
