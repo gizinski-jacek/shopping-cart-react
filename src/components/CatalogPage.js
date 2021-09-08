@@ -152,7 +152,7 @@ const CatalogPage = (props) => {
 			return null;
 		});
 		setDisplayContent(newContent);
-	}, [productType, addToCart]);
+	}, [productType]);
 
 	return <div className='catalogPage'>{displayContent}</div>;
 };
