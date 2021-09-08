@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 import './App.css';
 import NavBar from './components/NavBar';
 import Home from './components/Home';
@@ -97,6 +97,7 @@ const App = () => {
 				<Route exact path='/shop'>
 					<Shop addToCart={addItemToCart} />
 				</Route>
+				<Redirect to='/' />
 			</Switch>
 			{showCart ? (
 				<Cart
