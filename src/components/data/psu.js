@@ -11,12 +11,12 @@ import seasonic_prime_px_02 from '../../assets/products/psu/seasonic-prime-px-85
 const psu = [
 	{
 		categoryId: 'psu',
-		Name: 'Cooler Master 80+ Gold Fully Modular',
-		Wattage: '750 W',
-		Length: '140 mm',
-		Price: 119.99,
-		preview: cooler_master_power_01,
-		gallery: [cooler_master_power_01, cooler_master_power_02],
+		Name: 'SeaSonic PRIME PX 80+ Platinum Fully Modular',
+		Wattage: '850 W',
+		Length: '170 mm',
+		Price: 209.99,
+		preview: seasonic_prime_px_01,
+		gallery: [seasonic_prime_px_01, seasonic_prime_px_02],
 	},
 	{
 		categoryId: 'psu',
@@ -29,12 +29,12 @@ const psu = [
 	},
 	{
 		categoryId: 'psu',
-		Name: 'SeaSonic PRIME PX 80+ Platinum Fully Modular',
-		Wattage: '850 W',
-		Length: '170 mm',
-		Price: 209.99,
-		preview: seasonic_prime_px_01,
-		gallery: [seasonic_prime_px_01, seasonic_prime_px_02],
+		Name: 'Cooler Master 80+ Gold Fully Modular',
+		Wattage: '750 W',
+		Length: '140 mm',
+		Price: 119.99,
+		preview: cooler_master_power_01,
+		gallery: [cooler_master_power_01, cooler_master_power_02],
 	},
 ];
 

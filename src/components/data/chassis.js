@@ -12,6 +12,15 @@ import nzxt_02 from '../../assets/products/chassis/nzxt-h510-elite-02.jpg';
 const chassis = [
 	{
 		categoryId: 'chassis',
+		Name: 'NZXT H510 Elite ATX Mid Tower',
+		Dimensions: '428 mm x 210 mm x 460 mm',
+		'Max. GPU Length': '381 mm',
+		Price: 145.99,
+		preview: nzxt_01,
+		gallery: [nzxt_01, nzxt_02],
+	},
+	{
+		categoryId: 'chassis',
 		Name: 'Lian Li PC-O11 Dynamic ATX Full Tower',
 		Dimensions: '445 mm x 272 mm x 446 mm',
 		'Max. GPU Length': '420 mm',
@@ -27,15 +36,6 @@ const chassis = [
 		Price: 94.99,
 		preview: corsair_01,
 		gallery: [corsair_01, corsair_02, corsair_03],
-	},
-	{
-		categoryId: 'chassis',
-		Name: 'NZXT H510 Elite ATX Mid Tower',
-		Dimensions: '428 mm x 210 mm x 460 mm',
-		'Max. GPU Length': '381 mm',
-		Price: 145.99,
-		preview: nzxt_01,
-		gallery: [nzxt_01, nzxt_02],
 	},
 ];
 

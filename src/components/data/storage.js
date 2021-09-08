@@ -15,6 +15,15 @@ import western_digital_gold_02 from '../../assets/products/storage/western-digit
 const storage = [
 	{
 		categoryId: 'storage',
+		Name: 'Western Digital Gold 7200RPM',
+		Capacity: '18 TB',
+		Cache: '512 MB',
+		Price: 629.99,
+		preview: western_digital_gold_01,
+		gallery: [western_digital_gold_01, western_digital_gold_02],
+	},
+	{
+		categoryId: 'storage',
 		Name: 'Samsung 970 Pro',
 		Capacity: '1 TB',
 		Cache: '1024 MB',
@@ -48,15 +57,6 @@ const storage = [
 		Price: 99.99,
 		preview: crucial_mx500_01,
 		gallery: [crucial_mx500_01],
-	},
-	{
-		categoryId: 'storage',
-		Name: 'Western Digital Gold 7200RPM',
-		Capacity: '18 TB',
-		Cache: '512 MB',
-		Price: 629.99,
-		preview: western_digital_gold_01,
-		gallery: [western_digital_gold_01, western_digital_gold_02],
 	},
 ];
 

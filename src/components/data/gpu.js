@@ -24,18 +24,6 @@ const gpu = [
 	},
 	{
 		categoryId: 'gpu',
-		Name: 'Asus GeForce RTX 3070',
-		Memory: 'GDDR6 8 GB',
-		'Core Clock': '1500 MHz',
-		'Boost Clock': '1935 MHz',
-		TDP: '220 W',
-		Length: '318.5 mm',
-		Price: 819.99,
-		preview: rtx_3070_01,
-		gallery: [rtx_3070_01, rtx_3070_02, rtx_3070_03],
-	},
-	{
-		categoryId: 'gpu',
 		Name: 'XFX Radeon RX 6800',
 		Memory: 'GDDR6 16 GB',
 		'Core Clock': '1850 MHz',
@@ -45,6 +33,18 @@ const gpu = [
 		Price: 899.99,
 		preview: rx_6800_01,
 		gallery: [rx_6800_01, rx_6800_02, rx_6800_03],
+	},
+	{
+		categoryId: 'gpu',
+		Name: 'Asus GeForce RTX 3070',
+		Memory: 'GDDR6 8 GB',
+		'Core Clock': '1500 MHz',
+		'Boost Clock': '1935 MHz',
+		TDP: '220 W',
+		Length: '318.5 mm',
+		Price: 819.99,
+		preview: rtx_3070_01,
+		gallery: [rtx_3070_01, rtx_3070_02, rtx_3070_03],
 	},
 ];
 
