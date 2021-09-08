@@ -18,7 +18,7 @@ const Cart = (props) => {
 	return (
 		<div className='cart'>
 			<div className='cartControls'>
-				<Link to='/checkout' className='checkout' onClick={toggle}>
+				<Link to='/' className='checkout' onClick={toggle}>
 					CHECKOUT
 				</Link>
 				<button className='close' onClick={toggle}>
