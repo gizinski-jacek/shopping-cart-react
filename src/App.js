@@ -4,7 +4,6 @@ import NavBar from './components/NavBar';
 import Home from './components/Home';
 import Shop from './components/Shop';
 import Cart from './components/Cart';
-import Checkout from './components/Checkout';
 import { useEffect, useState } from 'react';
 
 const App = () => {
@@ -97,9 +96,6 @@ const App = () => {
 				<Route exact path='/' component={Home} />
 				<Route exact path='/shop'>
 					<Shop addToCart={addItemToCart} />
-				</Route>
-				<Route exact path='/checkout'>
-					<Checkout />
 				</Route>
 			</Switch>
 			{showCart ? (
