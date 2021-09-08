@@ -139,40 +139,38 @@ img {
 	flex-direction: column;
 	position: relative;
 	height: 60px;
-	margin-right: 0.5rem;
+	margin-right: 10px;
 	justify-content: space-between;
 }
 
 .cartItemPrice {
 	text-align: right;
+	font-size: 1rem;
+	margin: 0.25rem;
 	font-family: monospace;
 }
 
 .cartItemCount {
 	height: 10px;
-	width: 60px;
+	width: 55px;
 	padding: 0.5rem;
 	text-align: left;
-	margin-left: 0.5rem;
+	margin-right: 10px;
 	font-size: 1rem;
 	user-select: none;
 	font-family: monospace;
 }
 
-.divRelative {
-	position: relative;
-	height: fit-content;
-}
-
 .cartRemoveItem {
 	position: absolute;
-	top: -8px;
-	right: -8px;
-	height: 10px;
-	width: 10px;
+	transform: rotate(45deg);
+	top: -10px;
+	right: -25px;
+	height: 1rem;
+	width: fit-content;
 	user-select: none;
-	border: 2px solid red;
-	padding: 5px;
+	color: rgb(255, 0, 0);
+	font-size: 2rem;
 }
 
 .cartControls {

@@ -9,21 +9,16 @@ const CartItemWrapper = (props) => {
 				<div className='cartItemName'>{Name}</div>
 			</div>
 			<div className='toRight'>
-				<div className='cartItemPrice'>{Price + ' \u20AC'}</div>
 				<input
 					type='number'
 					className='cartItemCount'
 					value={count}
 					onChange={(e) => change(e, data)}
 				/>
-			</div>
-			<div className='divRelative'>
-				<img
-					className='cartRemoveItem'
-					src='/assets/remove.svg'
-					alt=''
-					onClick={() => remove(data)}
-				/>
+				<div className='cartItemPrice'>{Price + ' \u20AC'}</div>
+				<span className='cartRemoveItem' onClick={() => remove(data)}>
+					+
+				</span>
 			</div>
 		</div>
 	);
