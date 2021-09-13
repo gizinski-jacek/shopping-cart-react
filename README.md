@@ -2,4 +2,4 @@
 
 Shopping cart app created using React and Routing.
 
-###### This project is under active construction. Changes are to be expected.
+###### This project is mainly finished. Could use better styling though.
