@@ -37,6 +37,11 @@ const ProductCard = (props) => {
 		}
 	};
 
+	const addProduct = () => {
+		setItemQuantity(1);
+		addToCart(data, itemQuantity);
+	};
+
 	return (
 		<div className='productCard'>
 			<img className='productPreview' src={preview} alt={Name} />
@@ -62,10 +67,7 @@ const ProductCard = (props) => {
 							&#43;
 						</button>
 					</div>
-					<button
-						className='addToCartBtn'
-						onClick={() => addToCart(data, itemQuantity)}
-					>
+					<button className='addToCartBtn' onClick={() => addProduct()}>
 						Add To Cart
 					</button>
 				</div>
