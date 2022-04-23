@@ -1,6 +1,5 @@
 :root {
-	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
-		sans-serif;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 	font-size: 16px;
 }
 
@@ -10,6 +9,10 @@
 	box-sizing: border-box;
 	background-color: rgb(225, 225, 225);
 	overflow-y: hidden;
+	background-image: url('./assets/rtx-3090.jpg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 h1 {
@@ -42,13 +45,25 @@ a:hover {
 }
 
 .navBar {
-	background-color: rgb(0, 255, 150);
+	background-color: rgba(125, 0, 255, 0.9);
 	display: flex;
+	position: relative;
 	justify-content: space-between;
 	width: 100%;
 	padding: 0.5rem;
 	box-sizing: border-box;
 	user-select: none;
+	z-index: 10;
+}
+
+.navBar a {
+	padding: 0.5rem 1rem;
+	border-radius: 0.5rem;
+}
+
+.navBar a:hover {
+	color: rgba(255, 255, 255, 0.8);
+	background-color: rgba(0, 0, 0, 0.4);
 }
 
 .navPages {
@@ -66,6 +81,7 @@ a:hover {
 	align-items: center;
 	padding: 0.5rem;
 	margin-right: 2rem;
+	cursor: pointer;
 }
 
 img {
@@ -94,10 +110,30 @@ img {
 
 .home {
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	height: 100%;
 	width: 100%;
+}
+
+.home h2 {
+	padding: 1rem;
+	margin: 1rem;
+	background-color: rgba(255, 255, 255, 0.75);
+	cursor: default;
+}
+
+.home a {
+	padding: 1rem;
+	margin: 1rem;
+	background-color: rgba(255, 255, 255, 0.75);
+	font-weight: 600;
+	font-size: 1.5em;
+}
+
+.home a:hover {
+	background-color: rgb(255, 255, 255);
 }
 
 .cart {
@@ -111,7 +147,7 @@ img {
 	height: calc(100% - 4.5rem);
 	bottom: 0;
 	right: 0;
-	background-color: rgba(0, 0, 0, 0.5);
+	background-color: rgba(0, 0, 0, 0.75);
 	width: 30%;
 }
 
@@ -147,7 +183,7 @@ img {
 	flex-direction: column;
 	position: relative;
 	height: 60px;
-	margin-right: 10px;
+	margin-right: 0.5rem;
 	justify-content: space-between;
 }
 
@@ -163,7 +199,6 @@ img {
 	width: 55px;
 	padding: 0.5rem;
 	text-align: left;
-	margin-right: 10px;
 	font-size: 1rem;
 	user-select: none;
 	font-family: monospace;
@@ -179,6 +214,8 @@ img {
 	user-select: none;
 	color: rgb(255, 0, 0);
 	font-size: 2rem;
+	margin-left: 0.5rem;
+	cursor: pointer;
 }
 
 .cartControls {
@@ -189,6 +226,7 @@ img {
 }
 
 .checkout,
+.clear,
 .close {
 	display: flex;
 	justify-content: center;
@@ -197,7 +235,7 @@ img {
 	border-radius: 5px;
 	font-size: 1.2rem;
 	margin: 1rem 0;
-	padding: 0.25rem 1rem;
+	padding: 0.1rem 0.75rem;
 }
 
 .checkout {
@@ -206,6 +244,14 @@ img {
 
 .checkout:hover {
 	background-color: rgb(0, 255, 0);
+}
+
+.clear {
+	background-color: rgb(225, 225, 0);
+}
+
+.clear:hover {
+	background-color: rgb(225, 255, 0);
 }
 
 .close {
@@ -231,11 +277,13 @@ img {
 	flex-direction: column;
 	height: fit-content;
 	padding: 1rem;
+	padding-right: 2rem;
 	line-height: 1.6rem;
 	font-size: 1.4rem;
 	font-weight: 600;
 	width: fit-content;
 	white-space: nowrap;
+	background-color: rgba(255, 255, 255, 0.75);
 }
 
 .productMenu a {
@@ -273,6 +321,10 @@ img {
 	display: flex;
 	justify-content: space-between;
 	margin: 0.5rem 1rem;
+}
+
+button {
+	cursor: pointer;
 }
 
 .addToCartBtn {
