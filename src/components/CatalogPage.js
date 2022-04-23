@@ -8,7 +8,7 @@ import ImageSlider from './utils/ImageSlider';
 const CatalogPage = (props) => {
 	const { productType } = useParams();
 	const { addToCart } = props;
-	const [displayContent, setDisplayContent] = useState([]);
+	const [productList, setProductList] = useState([]);
 
 	const shuffleArray = (array) => {
 		let i = array.length;
@@ -30,132 +30,112 @@ const CatalogPage = (props) => {
 		} else {
 			productList = shuffleArray(allProducts);
 		}
-		const newContent = productList.map((item, index) => {
-			if (item.categoryId === 'cpu') {
-				return (
-					<ProductCard
-						key={item.categoryId + index + item.name}
-						data={item}
-						addToCart={addToCart}
-					>
-						<div className='detailsCard'>
-							<DataWrapper data={item} />
-							<ImageSlider
-								category={item.categoryId}
-								gallery={item.gallery}
-							/>
-						</div>
-					</ProductCard>
-				);
-			}
-			if (item.categoryId === 'gpu') {
-				return (
-					<ProductCard
-						key={item.categoryId + index + item.name}
-						data={item}
-						addToCart={addToCart}
-					>
-						<div className='detailsCard'>
-							<DataWrapper data={item} />
-							<ImageSlider
-								category={item.categoryId}
-								gallery={item.gallery}
-							/>
-						</div>
-					</ProductCard>
-				);
-			}
-			if (item.categoryId === 'memory') {
-				return (
-					<ProductCard
-						key={item.categoryId + index + item.name}
-						data={item}
-						addToCart={addToCart}
-					>
-						<div className='detailsCard'>
-							<DataWrapper data={item} />
-							<ImageSlider
-								category={item.categoryId}
-								gallery={item.gallery}
-							/>
-						</div>
-					</ProductCard>
-				);
-			}
-			if (item.categoryId === 'motherboard') {
-				return (
-					<ProductCard
-						key={item.categoryId + index + item.name}
-						data={item}
-						addToCart={addToCart}
-					>
-						<div className='detailsCard'>
-							<DataWrapper data={item} />
-							<ImageSlider
-								category={item.categoryId}
-								gallery={item.gallery}
-							/>
-						</div>
-					</ProductCard>
-				);
-			}
-			if (item.categoryId === 'psu') {
-				return (
-					<ProductCard
-						key={item.categoryId + index + item.name}
-						data={item}
-						addToCart={addToCart}
-					>
-						<div className='detailsCard'>
-							<DataWrapper data={item} />
-							<ImageSlider
-								category={item.categoryId}
-								gallery={item.gallery}
-							/>
-						</div>
-					</ProductCard>
-				);
-			}
-			if (item.categoryId === 'storage') {
-				return (
-					<ProductCard
-						key={item.categoryId + index + item.name}
-						data={item}
-						addToCart={addToCart}
-					>
-						<div className='detailsCard'>
-							<DataWrapper data={item} />
-							<ImageSlider
-								category={item.categoryId}
-								gallery={item.gallery}
-							/>
-						</div>
-					</ProductCard>
-				);
-			}
-			if (item.categoryId === 'chassis') {
-				return (
-					<ProductCard
-						key={item.categoryId + index + item.name}
-						data={item}
-						addToCart={addToCart}
-					>
-						<div className='detailsCard'>
-							<DataWrapper data={item} />
-							<ImageSlider
-								category={item.categoryId}
-								gallery={item.gallery}
-							/>
-						</div>
-					</ProductCard>
-				);
-			}
-			return null;
-		});
-		setDisplayContent(newContent);
+		setProductList(productList);
 	}, [productType]);
 
-	return <div className='catalogPage'>{displayContent}</div>;
+	const productsDisplay = productList.map((item, index) => {
+		if (item.categoryId === 'cpu') {
+			return (
+				<ProductCard
+					key={item.categoryId + index + item.name}
+					data={item}
+					addToCart={addToCart}
+				>
+					<div className='detailsCard'>
+						<DataWrapper data={item} />
+						<ImageSlider category={item.categoryId} gallery={item.gallery} />
+					</div>
+				</ProductCard>
+			);
+		}
+		if (item.categoryId === 'gpu') {
+			return (
+				<ProductCard
+					key={item.categoryId + index + item.name}
+					data={item}
+					addToCart={addToCart}
+				>
+					<div className='detailsCard'>
+						<DataWrapper data={item} />
+						<ImageSlider category={item.categoryId} gallery={item.gallery} />
+					</div>
+				</ProductCard>
+			);
+		}
+		if (item.categoryId === 'memory') {
+			return (
+				<ProductCard
+					key={item.categoryId + index + item.name}
+					data={item}
+					addToCart={addToCart}
+				>
+					<div className='detailsCard'>
+						<DataWrapper data={item} />
+						<ImageSlider category={item.categoryId} gallery={item.gallery} />
+					</div>
+				</ProductCard>
+			);
+		}
+		if (item.categoryId === 'motherboard') {
+			return (
+				<ProductCard
+					key={item.categoryId + index + item.name}
+					data={item}
+					addToCart={addToCart}
+				>
+					<div className='detailsCard'>
+						<DataWrapper data={item} />
+						<ImageSlider category={item.categoryId} gallery={item.gallery} />
+					</div>
+				</ProductCard>
+			);
+		}
+		if (item.categoryId === 'psu') {
+			return (
+				<ProductCard
+					key={item.categoryId + index + item.name}
+					data={item}
+					addToCart={addToCart}
+				>
+					<div className='detailsCard'>
+						<DataWrapper data={item} />
+						<ImageSlider category={item.categoryId} gallery={item.gallery} />
+					</div>
+				</ProductCard>
+			);
+		}
+		if (item.categoryId === 'storage') {
+			return (
+				<ProductCard
+					key={item.categoryId + index + item.name}
+					data={item}
+					addToCart={addToCart}
+				>
+					<div className='detailsCard'>
+						<DataWrapper data={item} />
+						<ImageSlider category={item.categoryId} gallery={item.gallery} />
+					</div>
+				</ProductCard>
+			);
+		}
+		if (item.categoryId === 'chassis') {
+			return (
+				<ProductCard
+					key={item.categoryId + index + item.name}
+					data={item}
+					addToCart={addToCart}
+				>
+					<div className='detailsCard'>
+						<DataWrapper data={item} />
+						<ImageSlider category={item.categoryId} gallery={item.gallery} />
+					</div>
+				</ProductCard>
+			);
+		}
+		return null;
+	});
+
+	return <div className='catalogPage'>{productsDisplay}</div>;
 };
 
 export default CatalogPage;
