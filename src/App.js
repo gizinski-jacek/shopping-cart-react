@@ -22,37 +22,14 @@ const App = () => {
 			return;
 		}
 
-		// This was the first iteration of doing update I picked up on internet,
-		// but won't use it for now since I dont understand why it's working
-		// even though the log throws false on every check. Will do more
-		// research into it to figure out why.
-		// itemToUpdate.count = value;
-		// const newState = cartContents.map((item, index) => {
-		// 	console.log(index === itemToUpdate.index);
-		// 	return index === itemToUpdate.index ? itemToUpdate : item;
-		// });
-
-		// This was second iteration built upon knowledge from previous on
-		// after slight modification. Looks a bit messy but does the job.
-		// const oldIndex = cartContents.indexOf(itemToUpdate);
-		// itemToUpdate.count = Number(value);
-		// const newState = cartContents.map((item, index) => {
-		// 	console.log(index === oldIndex);
-		// 	return index === oldIndex ? itemToUpdate : item;
-		// });
-
-		// Third iteration using spread syntax, much cleaner. Will use
-		// this one until I figure out the workings behind first iteration.
 		const newState = cartContents.map((item) => {
-			return item === itemToUpdate
-				? { ...item, count: Number(value) }
-				: item;
+			return item === itemToUpdate ? { ...item, count: Number(value) } : item;
 		});
 		setCartContents(newState);
 	};
 
 	const addItemToCart = (newItem, quantity) => {
-		const duplicate = cartContents.find((dup) => dup.Name === newItem.Name);
+		const duplicate = cartContents.find((item) => item.Name === newItem.Name);
 		if (duplicate) {
 			duplicate.count += quantity;
 			const newState = cartContents.map((item) => {
@@ -71,6 +48,10 @@ const App = () => {
 		setCartContents((prevState) => [
 			...prevState.filter((item) => item !== removeItem),
 		]);
+	};
+
+	const clearCart = () => {
+		setCartContents([]);
 	};
 
 	useEffect(() => {
@@ -102,6 +83,7 @@ const App = () => {
 			{showCart ? (
 				<Cart
 					data={cartContents}
+					clear={clearCart}
 					toggle={toggleCartDisplay}
 					change={changeItemCount}
 					remove={removeItemFromCart}
