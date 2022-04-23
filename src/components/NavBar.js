@@ -13,16 +13,10 @@ const NavBar = (props) => {
 					<Link to='/shop'>Shop</Link>
 				</h2>
 			</div>
-			<div className='navCart'>
-				<h3 className='itemsTotalPrice'>
-					Total: {totalPrice + ' \u20AC'}
-				</h3>
-				<div className='cartIconCount' onClick={toggle}>
-					<img
-						className='cartIcon'
-						src='/assets/cartIcon.svg'
-						alt=''
-					/>
+			<div className='navCart' onClick={toggle}>
+				<h3 className='itemsTotalPrice'>Total: {totalPrice + ' \u20AC'}</h3>
+				<div className='cartIconCount'>
+					<img className='cartIcon' src='/assets/cartIcon.svg' alt='' />
 					<div className='itemsCount'>{totalCount}</div>
 				</div>
 			</div>
