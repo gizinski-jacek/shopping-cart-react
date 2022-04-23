@@ -70,7 +70,7 @@ heroku open
 - Check product photos with simple image slider
 - Add specific quantity of products to cart
 - Change product quantity in cart
-- Remove product from cart
+- Remove single or all products from cart
 - Track current value of products in cart
 
 ## Status
