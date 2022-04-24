@@ -14,9 +14,9 @@ Shopping cart app created using React and Routing.
 
 # Github & Live
 
-Github repo can be found [here](https://github.com/gizinski-jacek/shopping-cart-react)
+Github repo can be found [here](https://github.com/gizinski-jacek/shopping-cart-react).
 
-This repo is live on [Heroku](https://shopping-cart-154325.herokuapp.com/)
+This repo is live on [Heroku](https://shopping-cart-154325.herokuapp.com).
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
