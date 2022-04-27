@@ -24,9 +24,7 @@ const Cart = (props) => {
 				<button className='clear' onClick={clear}>
 					CLEAR
 				</button>
-				<button className='close' onClick={toggle}>
-					X
-				</button>
+				<button className='close' onClick={toggle}></button>
 			</div>
 			<div className='cartContents'>{content}</div>
 		</div>

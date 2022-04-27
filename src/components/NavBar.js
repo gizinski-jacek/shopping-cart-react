@@ -5,16 +5,14 @@ const NavBar = (props) => {
 	return (
 		<div className='navBar'>
 			<div className='navPages'>
-				<h1 className='shopName'>PC Shop</h1>
-				<h2 className='homePage'>
+				<h1>PC Parts</h1>
+				<div className='shopLinks'>
 					<Link to='/'>Home</Link>
-				</h2>
-				<h2 className='shopPage'>
 					<Link to='/shop'>Shop</Link>
-				</h2>
+				</div>
 			</div>
 			<div className='navCart' onClick={toggle}>
-				<h3 className='itemsTotalPrice'>Total: {totalPrice + ' \u20AC'}</h3>
+				<h3 className='itemsTotalPrice'>Total: {totalPrice + '\u20AC'}</h3>
 				<div className='cartIconCount'>
 					<img className='cartIcon' src='/assets/cartIcon.svg' alt='' />
 					<div className='itemsCount'>{totalCount}</div>

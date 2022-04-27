@@ -30,7 +30,6 @@ h3 {
 h1,
 h2 {
 	font-weight: 600;
-	padding: 0.5rem;
 }
 
 a {
@@ -45,42 +44,55 @@ a:hover {
 }
 
 .navBar {
-	background-color: rgba(125, 0, 255, 0.9);
+	background-color: rgba(255, 255, 255, 0.5);
 	display: flex;
 	position: relative;
 	justify-content: space-between;
-	width: 100%;
+	margin: 0.5rem;
 	padding: 0.5rem;
 	box-sizing: border-box;
 	user-select: none;
 	z-index: 10;
+	width: 100%;
+	flex: 1;
 }
 
-.navBar a {
-	padding: 0.5rem 1rem;
+.navBar h1 {
+	padding: 0.5rem;
+	color: rgba(255, 255, 255, 0.8);
+	white-space: nowrap;
+}
+
+.shopLinks {
+	display: flex;
+	margin: 0 2rem;
+}
+
+.shopLinks a {
+	text-align: center;
+	font-weight: 600;
+	font-size: 1.5rem;
 	border-radius: 0.5rem;
+	color: rgba(255, 255, 255, 0.8);
 }
 
 .navBar a:hover {
-	color: rgba(255, 255, 255, 0.8);
+	color: rgba(255, 255, 255);
 	background-color: rgba(0, 0, 0, 0.4);
 }
 
 .navPages {
+	flex: 1;
 	display: flex;
-	width: 40rem;
 	align-items: center;
-	justify-content: space-between;
 }
 
 .navCart {
 	font-weight: 600;
 	display: flex;
-	justify-content: space-between;
 	width: fit-content;
 	align-items: center;
 	padding: 0.5rem;
-	margin-right: 2rem;
 	cursor: pointer;
 }
 
@@ -99,13 +111,11 @@ img {
 	align-items: flex-end;
 }
 
-.itemsCount {
-	font-size: 1rem;
-	color: rgb(0, 0, 255);
-}
-
+.itemsCount,
 .itemsTotalPrice {
-	margin-right: 2rem;
+	font-size: 1rem;
+	margin-right: 1rem;
+	color: rgb(255, 0, 0);
 }
 
 .home {
@@ -144,11 +154,11 @@ img {
 	position: fixed;
 	overflow-y: auto;
 	scrollbar-width: none;
-	height: calc(100% - 4.5rem);
+	height: calc(100% - 6rem);
 	bottom: 0;
 	right: 0;
+	margin: 0.5rem;
 	background-color: rgba(0, 0, 0, 0.75);
-	width: 30%;
 }
 
 .cartItem {
@@ -242,7 +252,16 @@ img {
 }
 
 .close {
+	height: fit-content;
+	width: fit-content;
+	user-select: none;
 	background-color: rgb(225, 0, 0);
+}
+
+.close:after {
+	font-weight: 600;
+	font-size: 1.5rem;
+	content: '\00d7';
 }
 
 .close:hover {
@@ -265,15 +284,17 @@ img {
 	height: fit-content;
 	padding: 1rem;
 	padding-right: 2rem;
+	margin: 0 0.5rem;
 	line-height: 1.6rem;
 	font-size: 1.4rem;
 	font-weight: 600;
 	width: fit-content;
 	white-space: nowrap;
-	background-color: rgba(255, 255, 255, 0.75);
+	background-color: rgba(255, 255, 255, 0.5);
 }
 
 .productMenu a {
+	color: rgba(255, 255, 255, 0.8);
 	cursor: default;
 }
 
@@ -510,6 +531,17 @@ button {
 		width: 100%;
 		grid-template-columns: repeat(2, auto);
 		justify-content: space-evenly;
+	}
+}
+
+@media (max-width: 600px) {
+	.shopLinks {
+		flex-direction: column;
+	}
+
+	.shopLinks a {
+		font-size: 1.25rem;
+		padding: 0.25rem;
 	}
 }
 
