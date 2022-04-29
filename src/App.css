@@ -280,6 +280,7 @@ img {
 	overflow-y: auto;
 	scrollbar-width: none;
 	min-width: fit-content;
+	height: 100%;
 }
 
 .productMenu {
