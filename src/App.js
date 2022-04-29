@@ -5,6 +5,7 @@ import Home from './components/Home';
 import Shop from './components/Shop';
 import Cart from './components/Cart';
 import { useEffect, useState } from 'react';
+import Footer from './components/Footer';
 
 const App = () => {
 	const [showCart, setShowCart] = useState(false);
@@ -89,6 +90,7 @@ const App = () => {
 					remove={removeItemFromCart}
 				/>
 			) : null}
+			<Footer />
 		</BrowserRouter>
 	);
 };
