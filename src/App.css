@@ -186,6 +186,10 @@ img {
 }
 
 .values {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	width: 100px;
 	margin: 0 0.5rem;
 }
 
