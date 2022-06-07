@@ -3,14 +3,15 @@ import { useState } from 'react';
 const ProductCard = (props) => {
 	const { Name, Price, preview } = props.data;
 	const { addToCart, data, children } = props;
+
 	const [showModal, setShowModal] = useState('none');
 	const [itemQuantity, setItemQuantity] = useState(1);
 
-	const toggleCardOn = () => {
+	const openModal = () => {
 		setShowModal('flex');
 	};
 
-	const toggleCardOff = (e) => {
+	const closeModal = (e) => {
 		if (e.target.className === 'detailsModal') {
 			setShowModal('none');
 		}
@@ -49,7 +50,7 @@ const ProductCard = (props) => {
 				<div className='productName'>{Name}</div>
 				<div>
 					<div>
-						<div className='detailsBtn' onClick={toggleCardOn}>
+						<div className='detailsBtn' onClick={openModal}>
 							Details
 						</div>
 						<div className='productPrice'>{Price + ' \u20AC'}</div>
@@ -75,7 +76,7 @@ const ProductCard = (props) => {
 			<div
 				className='detailsModal'
 				style={{ display: showModal }}
-				onClick={toggleCardOff}
+				onClick={closeModal}
 			>
 				{children}
 			</div>
