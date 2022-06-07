@@ -1,7 +1,5 @@
-const DataWrapper = (props) => {
-	const { data } = props;
-
-	const content = Object.entries(data).map(([key, value], index) => {
+const DataWrapper = ({ data }) => {
+	const contents = Object.entries(data).map(([key, value], index) => {
 		if (key === 'categoryId' || key === 'preview' || key === 'gallery') {
 			return null;
 		} else {
@@ -23,7 +21,7 @@ const DataWrapper = (props) => {
 		}
 	});
 
-	return <div className='moreDetails'>{content}</div>;
+	return <div className='moreDetails'>{contents}</div>;
 };
 
 export default DataWrapper;

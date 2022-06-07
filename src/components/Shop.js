@@ -7,9 +7,9 @@ import {
 } from 'react-router-dom';
 import CatalogPage from './CatalogPage';
 
-const Shop = (props) => {
-	const { addToCart } = props;
+const Shop = ({ addToCart }) => {
 	let match = useRouteMatch();
+
 	return (
 		<BrowserRouter>
 			<div className='content'>

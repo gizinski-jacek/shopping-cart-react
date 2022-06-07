@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 
-const NavBar = (props) => {
-	const { totalPrice, totalCount, toggle } = props;
+const NavBar = ({ totalPrice, totalCount, toggle }) => {
 	return (
 		<div className='navBar'>
 			<div className='navPages'>

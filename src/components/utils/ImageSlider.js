@@ -1,7 +1,6 @@
 import { useState } from 'react';
 
-const ImageSlider = (props) => {
-	const { category, gallery } = props;
+const ImageSlider = ({ category, gallery }) => {
 	const [slideIndex, setSlideIndex] = useState(0);
 
 	const prevSlide = () => {

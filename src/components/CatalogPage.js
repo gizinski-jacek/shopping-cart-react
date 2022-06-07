@@ -5,9 +5,8 @@ import ProductCard from './utils/ProductCard';
 import DataWrapper from './utils/DataWrapper';
 import ImageSlider from './utils/ImageSlider';
 
-const CatalogPage = (props) => {
+const CatalogPage = ({ addToCart }) => {
 	const { productType } = useParams();
-	const { addToCart } = props;
 	const [productList, setProductList] = useState([]);
 
 	const shuffleArray = (array) => {
@@ -23,6 +22,7 @@ const CatalogPage = (props) => {
 
 	useEffect(() => {
 		let productList = [];
+
 		if (productType) {
 			productList = allProducts.filter(
 				(item) => item.categoryId === productType
