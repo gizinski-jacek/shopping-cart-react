@@ -81,15 +81,14 @@ const App = () => {
 				</Route>
 				<Redirect to='/' />
 			</Switch>
-			{showCart ? (
-				<Cart
-					data={cartContents}
-					clear={clearCart}
-					toggle={toggleCartDisplay}
-					change={changeItemCount}
-					remove={removeItemFromCart}
-				/>
-			) : null}
+			<Cart
+				showCart={showCart}
+				data={cartContents}
+				clear={clearCart}
+				toggle={toggleCartDisplay}
+				change={changeItemCount}
+				remove={removeItemFromCart}
+			/>
 			<Footer />
 		</BrowserRouter>
 	);
