@@ -1,10 +1,8 @@
 import { Link } from 'react-router-dom';
 import CartItemWrapper from './utils/CartItemWrapper';
 
-const Cart = (props) => {
-	const { data, clear, toggle, change, remove } = props;
-
-	const content = data.map((item, index) => {
+const Cart = ({ showCart, data, clear, toggle, change, remove }) => {
+	const cartItemListDisplay = data.map((item, index) => {
 		return (
 			<CartItemWrapper
 				key={item.categoryId + index + item.Name}
@@ -16,7 +14,7 @@ const Cart = (props) => {
 	});
 
 	return (
-		<div className='cart'>
+		<div className={`cart ${showCart ? 'show' : ''}`}>
 			<div className='cartControls'>
 				<Link to='/' className='checkout' onClick={toggle}>
 					CHECKOUT
@@ -26,7 +24,7 @@ const Cart = (props) => {
 				</button>
 				<button className='close' onClick={toggle}></button>
 			</div>
-			<div className='cartContents'>{content}</div>
+			<div className='cartContents'>{cartItemListDisplay}</div>
 		</div>
 	);
 };
